@@ -1,66 +1,23 @@
 import React from 'react'
+import PokemonCard from '../PokemonCard/PokemonCard';
 import { connect } from 'react-redux';
-import useOnScreen from '../../utils/useOnScreen';
-import { setPokemon } from '../../actions';
 
 const mapStateToProps = state => ({
     list: state.pokemon.list
 })
 
-const mapDispatchToProps = dispatch => ({
-    setPokemons: value => dispatch(setPokemon(value))
-})
-
-
-
-const PokemonList = ({list , setPokemons}) => {
-   
-    const [ref , visible] = useOnScreen({rootMargin: "0px"});
-
-    const [offsetState, setOffsetState] = React.useState(100);
+const PokemonList = ({list}) => {
     
-    const useFetchPokemons = async (URL) => {
-    
-        try {
-            const reponse = await fetch(URL);
-            const data = await reponse.json();
-            // console.log(data.results);
-            setPokemons([...list,...data.results]);
-    
-        } catch (error) {
-            return console.log(error);
-        }
-        
-    }
+    console.log(list);
 
-    const increaseOffset = () => {
-        setOffsetState(prev=> prev + 100);
-    }
-
-    React.useEffect(()=> {
-        increaseOffset();
-        useFetchPokemons(`https://pokeapi.co/api/v2/pokemon?offset=${offsetState}&limit=100`);
-    }, [visible])
-    
-    
-
-    React.useEffect(() => {
-        useFetchPokemons(`https://pokeapi.co/api/v2/pokemon?offset=${offsetState}&limit=100`);
-
-    }, [])
-    
     return (
-       <React.Fragment>
+       <section className=' w-full min-h-[90vh]'>
            {list.map((element , index) => {
-                if(index + 1 === list.length){
-                    return <h1 key={`${index}-${element.name}`} ref={ref} >{element.name}</h1>
-
-                }else{
-                    return <h1 key={`${index}-${element.name}`}>{element.name}</h1>
-                }
+                return <PokemonCard key={`${index}-${element.species.name}`} pokemonInfo={element} />
+                // console.log(element);
            })}
-       </React.Fragment>
+       </section>
     );
 }
 
-export default connect(mapStateToProps , mapDispatchToProps)(PokemonList);
+export default connect(mapStateToProps) (PokemonList);
