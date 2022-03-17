@@ -3,8 +3,11 @@ import HeaderMobile from '../HeaderMobile/HeaderMobile';
 
 const Layout = ({children}) => {
     return (
-        
-        <HeaderMobile/>
+        <React.Fragment>
+            <HeaderMobile/>
+            {children}
+        </React.Fragment>    
+    
         
     );
 }
