@@ -9,7 +9,7 @@ const PokemonCard = ({pokemonInfo}) => {
     const infoPokemon = useSelector(state => state.pokemon.infoPokemon);
 
     const openInformation = (info)=> {
-        dispatch(toggleOpenInfo());
+        dispatch(toggleOpenInfo(true));
         dispatch(setPokemonInfo(info));
         console.log(infoPokemon);
     }

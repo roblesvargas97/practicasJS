@@ -7,7 +7,7 @@ const initialState = {
 const uiReducer = (state = initialState , action) => {
     switch (action.type) {
         case OPEN_INFO:
-            return {...state , stateInfo: !state.stateInfo};
+            return {...state , stateInfo: action.payload};
     
         default:
             return {...state};    ;

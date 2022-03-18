@@ -5,8 +5,9 @@ export const setPokemon = (payload) => ({
     payload,   
 })
 
-export const toggleOpenInfo = ()=> ({
+export const toggleOpenInfo = (payload)=> ({
     type: OPEN_INFO,
+    payload,
 })
 
 export const setPokemonInfo = (payload) => ({
