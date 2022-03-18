@@ -21,8 +21,6 @@ const PokemonInfo = () => {
         }, 200);
     }
 
-    console.log(animationExit);
-
     return (
        <div className={`pokemon-info fixed w-full top-[10vh] ${stateInfo? 'animate-entry': null} ${animationExit? 'animate-exit' : null } h-[90vh] bg-purple-700/50 backdrop-blur z-10 transition-all`} >
             <section className=' p-5 flex flex-col items-center space-y-2 ' >

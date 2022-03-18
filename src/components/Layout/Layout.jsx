@@ -34,7 +34,6 @@ const Layout = ({children , list , setPokemons}) => {
                 pokemonInfo.push(dataPokemon);
             }
             setPokemons([...list ,...pokemonInfo]);
-            console.log(list);
             
         } catch (error) {
             return console.log(error);

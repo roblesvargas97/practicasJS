@@ -1,6 +1,6 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { toggleOpenInfo } from '../../actions';
+import { setPokemonFav, toggleOpenInfo } from '../../actions';
 import { setPokemonInfo } from '../../actions/index';
 import { GoInfo , GoHeart } from 'react-icons/go';
 
@@ -8,13 +8,17 @@ const PokemonCard = ({pokemonInfo}) => {
 
     const dispatch = useDispatch();
     const infoPokemon = useSelector(state => state.pokemon.infoPokemon);
+    const favsPokemon = useSelector(state => state.pokemon.favsPokemon);
 
     const openInformation = (info)=> {
         dispatch(toggleOpenInfo(true));
         dispatch(setPokemonInfo(info));
-        console.log(infoPokemon);
     }
 
+    const addPokemonFav = (pokemon) => {
+        dispatch(setPokemonFav([...favsPokemon, pokemon ]));
+    }
+    
     return (
         <div className='w-[70%] bg-purple-500 rounded-md shadow-md shadow-slate-500 active:shadow-lg active:shadow-slate-500 transition-all'>
             <div className='w-full  flex items-center justify-center rounded-t-md  bg-purple-500/30 backdrop-blur'>
@@ -26,7 +30,7 @@ const PokemonCard = ({pokemonInfo}) => {
                 <button onClick={()=>openInformation(pokemonInfo)} className=' w-[50%] flex items-center justify-center text-purple-500 font-bold text-lg rounded-md bg-white px-3 py-1 shadow-sm cursor-pointer active:scale-95 transition-all ' type='button' >
                     <GoInfo size={30}/>
                 </button>
-                <button className=' w-[50%] flex items-center justify-center text-purple-500 font-bold text-lg rounded-md bg-white px-3 py-1 shadow-sm cursor-pointer active:scale-95 transition-all ' type='button' >
+                <button onClick={()=>addPokemonFav(pokemonInfo) } className=' w-[50%] flex items-center justify-center text-purple-500 font-bold text-lg rounded-md bg-white px-3 py-1 shadow-sm cursor-pointer active:scale-95 transition-all ' type='button' >
                     <GoHeart size={30}/>
                 </button>
                 </div>
