@@ -2,6 +2,7 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toggleOpenInfo } from '../../actions';
 import { setPokemonInfo } from '../../actions/index';
+import { GoInfo , GoHeart } from 'react-icons/go';
 
 const PokemonCard = ({pokemonInfo}) => {
 
@@ -21,9 +22,14 @@ const PokemonCard = ({pokemonInfo}) => {
             </div>
             <div className='bg-red-500 flex flex-col rounded-b-md items-center justify-center p-2 space-y-2' >
                 <h1 className=' first-letter:capitalize font-bold text-white text-2xl '>{pokemonInfo.species.name}</h1>
+                <div className=' w-full flex space-x-2' >
                 <button onClick={()=>openInformation(pokemonInfo)} className=' w-[50%] flex items-center justify-center text-purple-500 font-bold text-lg rounded-md bg-white px-3 py-1 shadow-sm cursor-pointer active:scale-95 transition-all ' type='button' >
-                    Mas Info
+                    <GoInfo size={30}/>
                 </button>
+                <button className=' w-[50%] flex items-center justify-center text-purple-500 font-bold text-lg rounded-md bg-white px-3 py-1 shadow-sm cursor-pointer active:scale-95 transition-all ' type='button' >
+                    <GoHeart size={30}/>
+                </button>
+                </div>
             </div>
         </div>
         
