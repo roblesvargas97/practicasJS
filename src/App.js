@@ -10,9 +10,8 @@ const App = () => {
     const stateInfo = useSelector(state => state.ui.stateInfo);
     return (
         <Layout>
-            {stateInfo && <PokemonInfo/>}
+            {stateInfo&&<PokemonInfo/> }
             <PokemonList/>
-            
         </Layout>
     );
 }
