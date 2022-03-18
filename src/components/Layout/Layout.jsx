@@ -57,8 +57,6 @@ const Layout = ({children , list , setPokemons}) => {
     }, [visible])
     
 
-    // const FooterRef = React.forwardRef((props,ref) => <Footer ref={ref} />);
-
     return (
         <React.Fragment>
             <HeaderMobile/>

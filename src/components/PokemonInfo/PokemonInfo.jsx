@@ -11,7 +11,7 @@ const PokemonInfo = () => {
     console.log(infoPokemon);
     return (
        <div className=' fixed w-full top-[10vh] h-[90vh]  bg-purple-500/30 backdrop-blur z-10' >
-            <section >
+            <section className=' overflow-y-scroll' >
                 <button>X</button>
                 <div>
                     <img src={infoPokemon.sprites.front_default} alt={infoPokemon.name} />
