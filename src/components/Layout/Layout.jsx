@@ -18,7 +18,7 @@ const Layout = ({children , list , setPokemons}) => {
 
     const [ref , visible] = useOnScreen({rootMargin: "0px"});
 
-    const [offsetState, setOffsetState] = React.useState(100);
+    const [offsetState, setOffsetState] = React.useState(0);
     
     const useFetchPokemons = async (URL) => {
     
