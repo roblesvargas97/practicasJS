@@ -4,3 +4,5 @@ export const CLEAR_ERROR = 'CLEAR_ERROR';
 export const FETCH_POKEMONS = 'FETCH_POKEMONS';
 export const TOGGLE_LOADER = 'TOGGLE_LOADER';
 export const SET_FAVORITE = 'SET_FAVORITE';
+export const OPEN_INFO = 'OPEN_INFO'; 
+export const SET_POKEMON_INFO = 'SET_POKEMON_INFO';
