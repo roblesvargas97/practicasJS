@@ -1,6 +1,7 @@
 
 import React from 'react'
 import { useSelector } from 'react-redux';
+import {GoX} from 'react-icons/go'
 
 const PokemonInfo = () => {
 
@@ -10,34 +11,34 @@ const PokemonInfo = () => {
 
     console.log(infoPokemon);
     return (
-       <div className=' fixed w-full top-[10vh] h-[90vh]  bg-purple-500/30 backdrop-blur z-10' >
-            <section className=' overflow-y-scroll' >
-                <button>X</button>
-                <div>
-                    <img src={infoPokemon.sprites.front_default} alt={infoPokemon.name} />
+       <div className=' fixed w-full top-[10vh] h-[90vh] bg-purple-700/50 backdrop-blur z-10' >
+            <section className=' p-5 flex flex-col items-center space-y-2 ' >
+                <button className=' w-[15%] flex self-end items center justify-center p-2 cursor-pointer bg-white/60 backdrop-blur rounded-md text-purple-500 shadow-md shadow-slate-500 active:shadow-lg active:shadow-slate-500 transition-all active:scale-75 '>
+                    <GoX size='30px' />                
+                </button>
+                <div className='flex justify-center items-center w-32 bg-red-500 rounded-md '>
+                    <img className='' src={infoPokemon.sprites.front_default} alt={infoPokemon.name} />
                 </div>
-                <div>
-                    <h2>Nombre: {infoPokemon.name.charAt(0).toUpperCase() + infoPokemon.name.slice(1) }</h2>
-                    <h3>Tipo de Pokemon: {infoPokemon.types[0].type.name.charAt(0).toUpperCase() + infoPokemon.types[0].type.name.slice(1) }</h3>
+                <div className=' space-y-2'>
+                    <h2 className=' text-center text-xl font-bold text-white' >Nombre: <span className=' font-light' >{infoPokemon.name.charAt(0).toUpperCase() + infoPokemon.name.slice(1)}</span> </h2>
+                    <h3 className=' text-center text-xl font-bold text-white' >Tipo de Pokemon: <span className=' font-light' >{infoPokemon.types[0].type.name.charAt(0).toUpperCase() + infoPokemon.types[0].type.name.slice(1) }</span> </h3>
         
-                    <div className=' bg-slate-600'>
-                        <h3>Movimientos</h3>
-                        <div className=' h-40 bg-red-400 overflow-y-scroll'>
+                    <div className=' bg-red-500 rounded-md '>
+                        <h3 className=' text-center text-xl font-bold text-white' >Movimientos</h3>
+                        <div className=' h-20 rounded-b-md overflow-y-scroll p-2 bg-purple-500'>
                             {infoPokemon.moves.map((element,index) => (
-                                <p key={index} className="first-letter:capitalize" >{element.move.name}</p>
+                                <p key={index} className=" text-center text-xl font-light text-white first-letter:capitalize" >{element.move.name}</p>
                             ))}
                         </div>
                     </div>
-
-                    <div className=' bg-slate-600'>
-                        <h3>Estadisticas</h3>
-                        <div className=' h-40 bg-red-400 overflow-y-scroll'>
+                    <div className=' bg-red-500 rounded-md '>
+                        <h3 className='text-center text-xl font-bold text-white' >Estadisticas</h3>
+                        <div className=' h-40 rounded-b-md overflow-y-scroll p-2 bg-purple-500'>
                             {infoPokemon.stats.map((element,index) => (
-                                <p key={index} className="first-letter:capitalize" >{element.stat.name}: <span>{element.base_stat}</span> </p>
+                                <p key={index} className=" text-base text-white font-bold first-letter:capitalize" >{element.stat.name}: <span className=' font-light' >{element.base_stat}</span> </p>
                             ))}
                         </div>
                     </div>
-
                 </div>
             </section>
        </div>
