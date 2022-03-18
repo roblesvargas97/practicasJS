@@ -7,11 +7,10 @@ const mapStateToProps = state => ({
 })
 
 const PokemonList = ({list}) => {
-    
-    console.log(list);
+
 
     return (
-       <section className=' w-full min-h-[90vh]'>
+       <section className=' w-full min-h-[90vh] flex flex-col items-center p-5 space-y-10'>
            {list.map((element , index) => {
                 return <PokemonCard key={`${index}-${element.species.name}`} pokemonInfo={element} />
                 // console.log(element);

@@ -34,8 +34,7 @@ const Layout = ({children , list , setPokemons}) => {
                 pokemonInfo.push(dataPokemon);
             }
             setPokemons([...list ,...pokemonInfo]);
-
-            
+            console.log(list);
             
         } catch (error) {
             return console.log(error);
@@ -47,17 +46,16 @@ const Layout = ({children , list , setPokemons}) => {
         setOffsetState(prev=> prev + 100);
     }
 
+     React.useEffect(() => {
+        useFetchPokemons(`https://pokeapi.co/api/v2/pokemon?offset=${offsetState}&limit=100`);
+
+    }, [])
+
     React.useEffect(()=> {
         increaseOffset();
         useFetchPokemons(`https://pokeapi.co/api/v2/pokemon?offset=${offsetState}&limit=100`);
     }, [visible])
     
-    
-
-    React.useEffect(() => {
-        useFetchPokemons(`https://pokeapi.co/api/v2/pokemon?offset=${offsetState}&limit=100`);
-
-    }, [])
 
     // const FooterRef = React.forwardRef((props,ref) => <Footer ref={ref} />);
 
