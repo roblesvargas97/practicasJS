@@ -4,6 +4,7 @@ import Footer from '../Footer/Footer';
 import { setLoader, setPokemon } from '../../actions';
 import useOnScreen from '../../utils/useOnScreen';
 import { connect } from 'react-redux';
+import Header from '../Header/Header';
 
 const mapStateToProps = state => ({
     list: state.pokemon.list
@@ -62,6 +63,7 @@ const Layout = ({children , list , setPokemons , setLoader}) => {
     return (
         <React.Fragment>
             <HeaderMobile/>
+            <Header/>
             {children}
             <div ref={ref}>
                 <Footer/>
