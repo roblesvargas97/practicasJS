@@ -24,7 +24,7 @@ const PokemonInfo = () => {
     return (
        <div className={`pokemon-info fixed w-full top-[10vh] ${stateInfo? 'animate-entry': null} ${animationExit? 'animate-exit' : null } h-[90vh] bg-purple-700/50 backdrop-blur z-20 transition-all`} >
             <section className=' p-5 flex flex-col items-center space-y-2 ' >
-                <button onClick={onClickClose} className=' w-[15%] flex self-end items center justify-center p-2 cursor-pointer bg-white/60 backdrop-blur rounded-md text-purple-500 shadow-md shadow-slate-500 active:shadow-lg active:shadow-slate-500 transition-all active:scale-75 '>
+                <button onClick={onClickClose} className=' w-[15%] flex self-end items center justify-center p-2 cursor-pointer bg-white/60 backdrop-blur rounded-md text-purple-500 shadow-md shadow-slate-500 active:shadow-lg active:shadow-slate-500 transition-all active:scale-75 lg:w-14 '>
                     <GoX size='30px' />                
                 </button>
                 <div className='flex justify-center items-center w-32 bg-red-500 rounded-md '>
