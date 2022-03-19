@@ -17,7 +17,7 @@ const PokemonInfo = () => {
             setanimationExit(true);
             setTimeout(() => {
                 dispatch(toggleOpenInfo(false));
-            }, 500);
+            }, 800);
         }, 200);
     }
 

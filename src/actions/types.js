@@ -7,3 +7,4 @@ export const SET_FAVORITE = 'SET_FAVORITE';
 export const OPEN_INFO = 'OPEN_INFO'; 
 export const SET_POKEMON_INFO = 'SET_POKEMON_INFO';
 export const SET_POKEMON_FAV = 'SET_POKEMON_FAV';
+export const OPEN_POKEMON_FAV = 'OPEN_POKEMON_FAV';

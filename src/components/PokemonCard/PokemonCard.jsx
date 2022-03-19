@@ -18,7 +18,7 @@ const PokemonCard = ({pokemonInfo}) => {
     const addPokemonFav = (pokemon) => {
         dispatch(setPokemonFav([...favsPokemon, pokemon ]));
     }
-    
+
     return (
         <div className='w-[70%] bg-purple-500 rounded-md shadow-md shadow-slate-500 active:shadow-lg active:shadow-slate-500 transition-all'>
             <div className='w-full  flex items-center justify-center rounded-t-md  bg-purple-500/30 backdrop-blur'>

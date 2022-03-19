@@ -14,7 +14,8 @@ module.exports = {
       },
       animation:{
         'entry': 'entry ease-in-out 1s',
-        'exit': 'exit ease-in-out 1s forwards '
+        'exit': 'exit ease-in-out 1s forwards ',
+        
       }
     },
     fontFamily:{
