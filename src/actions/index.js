@@ -1,4 +1,4 @@
-import { SET_POKEMON , OPEN_INFO, SET_POKEMON_INFO , SET_POKEMON_FAV, OPEN_POKEMON_FAV, OPEN_SEARCHER, SET_ERROR_SEARCHER } from "./types";
+import { SET_POKEMON , OPEN_INFO, SET_POKEMON_INFO , SET_POKEMON_FAV, OPEN_POKEMON_FAV, OPEN_SEARCHER, SET_ERROR_SEARCHER, SET_LOADER } from "./types";
 
 export const setPokemon = (payload) => ({
     type: SET_POKEMON,
@@ -32,5 +32,10 @@ export const openSearcher = (payload) => ({
 
 export const setErrorSearcher = (payload) => ({
     type: SET_ERROR_SEARCHER,
+    payload,
+})
+
+export const setLoader = (payload) => ({
+    type: SET_LOADER ,
     payload,
 })

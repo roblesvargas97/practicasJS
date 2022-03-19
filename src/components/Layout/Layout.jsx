@@ -1,7 +1,7 @@
 import React from 'react'
 import HeaderMobile from '../HeaderMobile/HeaderMobile';
 import Footer from '../Footer/Footer';
-import { setPokemon } from '../../actions';
+import { setLoader, setPokemon } from '../../actions';
 import useOnScreen from '../../utils/useOnScreen';
 import { connect } from 'react-redux';
 
@@ -10,23 +10,26 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    setPokemons: value => dispatch(setPokemon(value))
+    setPokemons: value => dispatch(setPokemon(value)),
+    setLoader: value => dispatch(setLoader(value)),
 })
 
 
-const Layout = ({children , list , setPokemons}) => {
+const Layout = ({children , list , setPokemons , setLoader}) => {
 
-    const [ref , visible] = useOnScreen({rootMargin: "0px"});
+    const [ref , visible] = useOnScreen({rootMargin: "40px"});
 
     const [offsetState, setOffsetState] = React.useState(0);
-    
+
     const useFetchPokemons = async (URL) => {
     
         try {
             const pokemonInfo = [];
+
+            setLoader(true);
             const reponse = await fetch(URL);
             const data = await reponse.json();
-            // console.log(data);
+            setLoader(false);
             
             for(const element of data.results){
                 const responsePokemon = await fetch(element.url);
