@@ -9,7 +9,7 @@ const PokemonFavs = () => {
     const favsPokemon = useSelector(state => state.pokemon.favsPokemon);
 
     return (
-        <section className={` fixed w-full h-[90vh] p-5 top-[10vh] bg-red-700/50 backdrop-blur  z-20 `}>
+        <section className={` fixed w-full h-[90vh] p-5 top-[10vh] bg-red-700/50 backdrop-blur  z-30 `}>
             <div className=' h-[80vh] bg-purple-500 rounded-md' >
                 <h2 className=' text-2xl text-white font-bold text-center' >Favoritos</h2>
                 <div className=' h-full bg-white rounded-b-md space-y-5 overflow-y-scroll p-5 ' >

@@ -1,16 +1,21 @@
 import React from 'react';
 import {GoSearch , GoHeart} from 'react-icons/go';
 import { useDispatch, useSelector } from 'react-redux';
-import { openPokemonFav } from '../../actions/index';
+import { openPokemonFav, openSearcher } from '../../actions/index';
 
 const HeaderMobile = () => {
    
     const dispatch = useDispatch();
     const stateFav = useSelector(state => state.ui.stateFav);
     const favsPokemon = useSelector(state => state.pokemon.favsPokemon);
+    const stateSearcher = useSelector(state => state.ui.stateSearcher);
 
     const openFav = () => {
         dispatch(openPokemonFav(!stateFav));
+    }
+
+    const openSearch = () => {
+        dispatch(openSearcher(!stateSearcher));
     }
 
     return (
@@ -21,7 +26,7 @@ const HeaderMobile = () => {
                     <GoHeart size="30px"/>
                     { favsPokemon.length!==0 && <span className="absolute top-[-3px] right-[-3px] rounded-full  w-3 h-3 bg-white animate-pulse"></span> }
                 </button>
-                <button className="relative flex items-center justify-center text-purple-500 rounded-md bg-white/60 backdrop-blur p-2 shadow-md shadow-slate-500 active:shadow-lg active:shadow-slate-500 cursor-pointer active:scale-75 transition-all">    
+                <button onClick={()=>openSearch()} className="relative flex items-center justify-center text-purple-500 rounded-md bg-white/60 backdrop-blur p-2 shadow-md shadow-slate-500 active:shadow-lg active:shadow-slate-500 cursor-pointer active:scale-75 transition-all">    
                     <GoSearch size="30px"/>
                 </button>
             </div>

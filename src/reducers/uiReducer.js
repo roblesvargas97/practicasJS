@@ -1,8 +1,9 @@
-import { OPEN_INFO, OPEN_POKEMON_FAV ,  } from "../actions/types";
+import { OPEN_INFO, OPEN_POKEMON_FAV , OPEN_SEARCHER  } from "../actions/types";
 
 const initialState = {
     stateInfo: false,
     stateFav: false,
+    stateSearcher: false,
 }
 
 const uiReducer = (state = initialState , action) => {
@@ -12,6 +13,9 @@ const uiReducer = (state = initialState , action) => {
 
         case OPEN_POKEMON_FAV:
             return {...state , stateFav: action.payload };
+        
+        case OPEN_SEARCHER:
+            return {...state , stateSearcher: action.payload};
     
         default:
             return {...state};    ;
