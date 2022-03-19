@@ -29,7 +29,7 @@ const PokemonCard = ({pokemonInfo}) => {
     }
 
     return (
-        <div className='w-[70%] bg-purple-500 rounded-md shadow-md shadow-slate-500 active:shadow-lg active:shadow-slate-500 transition-all'>
+        <div className='w-[70%] bg-purple-500 rounded-md shadow-md shadow-slate-500 active:shadow-lg active:shadow-slate-500 transition-all md:w-full'>
             <div className='w-full  flex items-center justify-center rounded-t-md  bg-purple-500/30 backdrop-blur'>
                 <img className=' w-32' src={pokemonInfo.sprites.front_default} alt="image" />
             </div>
