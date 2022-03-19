@@ -16,7 +16,16 @@ const PokemonCard = ({pokemonInfo}) => {
     }
 
     const addPokemonFav = (pokemon) => {
-        dispatch(setPokemonFav([...favsPokemon, pokemon ]));
+        
+        const pokemonExist = favsPokemon.some(element => {
+            return (element.id === pokemon.id);
+        } )
+
+        if(!pokemonExist){
+            dispatch(setPokemonFav([...favsPokemon, pokemon ]));
+        }
+        
+        
     }
 
     return (

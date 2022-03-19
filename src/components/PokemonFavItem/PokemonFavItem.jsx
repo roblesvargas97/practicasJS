@@ -3,7 +3,6 @@ import { GoTrashcan } from 'react-icons/go';
 
 const PokemonFavItem = ({pokemon}) => {
 
-    console.log(pokemon);
 
     return (
         <div className=" flex bg-purple-500 backdrop-blur rounded-md shadow-md shadow-slate-500 active:shadow-lg active:shadow-slate-500 " >

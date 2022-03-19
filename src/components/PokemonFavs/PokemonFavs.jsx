@@ -8,8 +8,6 @@ const PokemonFavs = () => {
     const stateFav = useSelector(state => state.ui.stateFav);
     const favsPokemon = useSelector(state => state.pokemon.favsPokemon);
 
-    console.log(favsPokemon);
-
     return (
         <section className={` fixed w-full h-[90vh] p-5 top-[10vh] bg-red-700/50 backdrop-blur  z-20 `}>
             <div className=' h-[80vh] bg-purple-500 rounded-md' >
@@ -17,7 +15,7 @@ const PokemonFavs = () => {
                 <div className=' h-full bg-white rounded-b-md space-y-5 overflow-y-scroll p-5 ' >
                     {favsPokemon.length !== 0?
                         favsPokemon.map(element => (
-                            <PokemonFavItem pokemon={element} />
+                            <PokemonFavItem key={element.id} pokemon={element} />
                         ))
                         :
                         <div className=' w-full bg-red-500 rounded-md flex flex-col items-center justify-center p-5 shadow-md text-white shadow-slate-500 active:shadow-lg active:shadow-slate-500 ' >
